@@ -215,7 +215,7 @@ var authenticate = (req, res, next) => {
 
 app.get('/user/me', authenticate, (req, res) => {
     res.send(req.user);
-});
+});     
 
 
 
