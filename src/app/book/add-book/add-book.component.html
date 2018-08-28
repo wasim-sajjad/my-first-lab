@@ -1,0 +1,29 @@
+<div class="add-book">
+  <mat-card>
+  <!-- <mat-card *ngIf="loaded"> -->
+    <mat-card-header>
+      <mat-card-title>
+        User Information:
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+      <form fxLayout="column" novalidate [formGroup]="fg" (ngSubmit)="saveData(fg.value)">
+
+        <mat-form-field>
+          <input matInput placeholder="Title" formControlName="title" required>
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput placeholder="Description" formControlName="description" required></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Image Path" formControlName="imagePath" required>
+        </mat-form-field>
+
+        <div>
+          <button mat-raised-button color="primary" type="submit">Save</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

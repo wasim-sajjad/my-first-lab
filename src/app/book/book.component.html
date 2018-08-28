@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" (click)="onClick()" *ngIf="authservice.isAuthenticated()">New Book</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-9">
+    <div href="#" class="list-group-item item clearfix" *ngFor="let book of books">
+      <div class="pull-left">
+        <h4 class="list-group-item-heading">{{book.title}}</h4>
+        <p class="list-group-item-heading">{{book.description}}</p>
+      </div>
+
+      <div class="pull-right">
+        <div class="book-image">
+          <img src="{{book.imagePath}}" alt="{{book.title}}" class="img-responsive" style="max-height: 100px;">
+        </div>
+        <div class="action-buttons">
+          <button type="button" class="btn btn-danger" style="margin:5px" (click)="onDelete(book._id)" *ngIf="authservice.isAuthenticated()">Delete</button>
+          <button type="button" class="btn btn-warning" style="margin:5px" (click)="onUpdate(book._id)" *ngIf="authservice.isAuthenticated()">Update</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
